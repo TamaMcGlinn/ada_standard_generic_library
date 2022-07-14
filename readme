@@ -6,6 +6,14 @@
 
 The Ada SGL is a port of the C++ Standard Template Library (STL).
 
+In 2022, I retrieved it from [Alexander V. Konstantinou's thesis page](http://www1.cs.columbia.edu/dcc/nestor/presentations/SGL/),
+extracted the tar files, and put them in this git repository.
+
+TODO:
+- add .gpr project
+- create alire package
+- add AUnit tests
+
 *************************************************************************
 ** This release is made to solicit comments on the library design and ***
 ** should not be depended upon as a standard!                         ***
