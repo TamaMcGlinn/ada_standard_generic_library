@@ -1,0 +1,40 @@
+--  Copyright (c) 1996
+--  Rensselaer Polytechnic Institute
+--
+--  Permission to use, copy, modify, distribute and sell this software
+--  and its documentation for any purpose is hereby granted without fee,
+--  provided that the above copyright notice appear in all copies and
+--  that both that copyright notice and this permission notice appear
+--  in supporting documentation.  Rensselaer Polytechnic Institute makes no
+--  representations about the suitability of this software for any
+--  purpose.  It is provided "as is" without express or implied warranty.
+--
+--
+--  $Id: sgl-reverse_iterator_operations.ads,v 2.1 1997/07/12 00:39:33 akonstan Exp $
+--
+
+with SGL;
+with SGL.Containers;
+with SGL.Bidirectional_Iterators;
+
+generic
+   with package Containers is new SGL.Containers(<>);
+   type Reverse_Iterator is private;
+   type Constant_Reverse_Iterator is private;
+   with function Make_Reverse(I : Containers.Iterator)
+     return Reverse_Iterator is <>;
+   with function Make_Reverse(I : Containers.Constant_Iterator)
+     return Constant_Reverse_Iterator is <>;
+package SGL.Reverse_Iterator_Operations is
+
+   function RStart(C: in Containers.Container_Pointer)
+                   return Reverse_Iterator;
+   function RStart(C: in Containers.Container)
+                   return Constant_Reverse_Iterator;
+
+   function RFinish(C: in Containers.Container_Pointer)
+                    return Reverse_Iterator;
+   function RFinish(C: in Containers.Container)
+                    return Constant_Reverse_Iterator;
+
+end SGL.Reverse_Iterator_Operations;
