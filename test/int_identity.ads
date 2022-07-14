@@ -9,9 +9,6 @@
 --  representations about the suitability of this software for any
 --  purpose.  It is provided "as is" without express or implied warranty.
 --
---
---  $Id: int_identity.ads,v 2.1 1997/07/12 00:40:37 akonstan Exp $
---
 
 with SGL.Function_Adaptors;
 

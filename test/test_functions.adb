@@ -9,9 +9,6 @@
 --  representations about the suitability of this software for any
 --  purpose.  It is provided "as is" without express or implied warranty.
 --
---
---  $Id: test_functions.adb,v 2.1 1997/07/12 00:40:37 akonstan Exp $
---
 
 with Gnat.IO; use Gnat.IO;
 -- with Int_Lists;
@@ -163,13 +160,10 @@ begin
    declare
       Temp: Boolean;
    begin
---      Temp := Remainder_Dividing_60_Is_0(0);
-      null;
+      Temp := Remainder_Dividing_60_Is_0(0);
    exception
       when Constraint_Error =>
          Put("Constraint_Error raised, as expected");
--- actually GNAT raises STATUS_INTEGER_DIVIDE_BY_ZERO, but it
--- doesn't work to try to catch it.
    end;
 
    New_Line;

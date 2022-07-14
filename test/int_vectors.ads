@@ -9,9 +9,6 @@
 --  representations about the suitability of this software for any
 --  purpose.  It is provided "as is" without express or implied warranty.
 --
---
---  $Id: int_vectors.ads,v 2.1 1997/07/12 00:40:37 akonstan Exp $
---
 
 with SGL.Vectors;
 with Int_Controlled;
@@ -21,5 +18,4 @@ package Int_Vectors is new SGL.Vectors(Integer,
                                        "=",
                                        Int_Private.Assign,
                                        Int_Controlled.Initialize,
-                                       Int_Controlled.Adjust,
                                        Int_Controlled.Finalize);

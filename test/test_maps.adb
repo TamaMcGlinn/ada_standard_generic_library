@@ -9,12 +9,8 @@
 --  representations about the suitability of this software for any
 --  purpose.  It is provided "as is" without express or implied warranty.
 --
---
---  $Id: test_maps.adb,v 2.1 1997/07/12 00:40:37 akonstan Exp $
---
 
 with Gnat.IO; use Gnat.IO;
-with Int_Bool_Maps;
 with Int_Bool_Map_Signatures;
 with Test_Assert;
 with Bool_Random;
@@ -22,6 +18,7 @@ with Bool_Random;
 with SGL;
 with Integer_Ostream_Iterators;
 with SGL.Basic_Algorithms;
+
 
 procedure Test_Maps is
    use Int_Bool_Maps;

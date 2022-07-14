@@ -1,0 +1,181 @@
+cd d:/ada95seminar/ada/sgl/temp/sgl-2.0a3/test/
+make -k test
+gnatmake -g -gnato  -I../SGL test_vectors.adb
+gnatmake: "test_vectors.exe" up to date.
+gnatmake -g -gnato  -I../SGL test_lists.adb
+gnatmake: "test_lists.exe" up to date.
+gnatmake -g -gnato  -I../SGL test_trees.adb
+gnatmake: "test_trees.exe" up to date.
+gnatmake -g -gnato  -I../SGL test_sets.adb
+gnatmake: "test_sets.exe" up to date.
+gnatmake -g -gnato  -I../SGL test_maps.adb
+gnatmake: "test_maps.exe" up to date.
+gnatmake -g -gnato  -I../SGL test_stacks.adb
+gnatmake: "test_stacks.exe" up to date.
+gnatmake -g -gnato  -I../SGL test_queues.adb
+gnatmake: "test_queues.exe" up to date.
+gnatmake -g -gnato  -I../SGL test_algorithms.adb
+gnatmake: "test_algorithms.exe" up to date.
+gnatmake -g -gnato  -I../SGL test_container_signatures.adb
+gnatmake: "test_container_signatures.exe" up to date.
+gnatmake -g -gnato  -I../SGL test_functions.adb
+gnatmake: "test_functions.exe" up to date.
+gnatmake -g -gnato  -I../SGL test_iterators.adb
+gnatmake: "test_iterators.exe" up to date.
+gnatmake -O3 -gnatn -I../SGL benchmark.adb
+gnatmake: "benchmark.exe" up to date.
+./test_vectors
+*** Welcome to Test_Vectors $RCSfile: test_vectors.adb,v $ $Revision: 2.1 $ ***
+
+Checking empty vector properties ... OK
+Checking A contents after pushing values 1 and 2 ... OK
+Checking contents of A using reverse iterators ... OK
+Checking A contents after popping (value 2) ... OK
+Checking A contents after popping last value (1) ... OK
+Checking A after pushing 1..100000 ... OK
+Running Find(Constant) on A looking for 1,100000,200000 ... OK
+Running Find(Constant) and Find(Mutating) on A looking for 55 ... OK
+Running Find(Reverse_Iterator) on A looking for 55 ... OK
+Checking A after popping all values ... OK
+Checking Sequence Operations on A={1 2 3}, B={1 2 4} ... OK
+
+*** End $RCSfile: test_vectors.adb,v $ $Revision: 2.1 $ ***
+./test_lists
+*** Welcome to Test_Lists $RCSfile: test_lists.adb,v $ $Revision: 2.1 $ ***
+
+Checking empty list properties ... OK
+Checking A contents after pushing values 1 and 2 ... OK
+Checking A contents after popping back (value 2) ... OK
+Checking A contents after popping back last value (1) ... OK
+Checking A after pushing 1..100000 ... OK
+Running Find on A ... OK
+Running Find(Reverse_Iterator) on A looking for 55 ... OK
+Checking A after popping (Front) all values ... OK
+Checking A after inserting 1,2,3,4,5 (push front) ... OK
+A =           1,           2,           3,           4,           5, 
+Checking B after B := A = {1,2,3,4,5} ... OK
+Checking empty list properties after Erase(B)... OK
+Checking A after applying bidirectional reverse ... OK
+A =           5,           4,           3,           2,           1, 
+Checking A and B after sorting ... OK
+Checking Sequence Operations on A and B ... OK
+
+*** End of Test_Lists $RCSfile: test_lists.adb,v $ $Revision: 2.1 $ ***
+
+./test_trees
+*** Welcome to Test_Trees $RCSfile: test_trees.adb,v $ $Revision: 2.1 $ ***
+
+Checking empty tree properties ... OK
+Checking A contents after inserting values 1 and 2 ... OK
+Checking empty tree properties after removing all values ... OK
+Checking tree properties after inserting 10000 random values ... OK
+Checking order of values ... OK
+Checking empty tree properties after removing all values ... OK
+Checking A contents after inserting value 1 and changing it to 2 ... OK
+*** End of Test_Trees $RCSfile: test_trees.adb,v $ $Revision: 2.1 $ ***
+
+./test_sets
+*** Welcome to Test_Sets $RCSfile: test_sets.adb,v $ $Revision: 2.1 $ ***
+
+Checking empty Set properties ... OK
+Checking A contents after inserting values 1 and 2 ... OK
+Checking empty Set properties after removing all values ... OK
+Checking Set properties after inserting 10000 random values ... OK
+Checking order of values ... OK
+
+*** End of Test_Sets $RCSfile: test_sets.adb,v $ $Revision: 2.1 $ ***
+./test_maps
+*** Welcome to Test_Maps $RCSfile: test_maps.adb,v $ $Revision: 2.1 $ ***
+
+Checking empty Map properties ... OK
+Checking A contents after inserting values 1 and 2 ... OK
+Checking A contents after assigning A[1]=False ... OK
+Checking A contents after changing A[1] back to True with Ref_Second ... OK
+Checking empty Map properties after removing all values ... OK
+Checking Map properties after inserting 10000 random values ... OK
+Checking values ... OK
+
+*** End of Test_Maps $RCSfile: test_maps.adb,v $ $Revision: 2.1 $ ***
+./test_stacks
+*** Welcome to Test_Stacks $RCSfile: test_stacks.adb,v $ $Revision: 2.1 $ ***
+
+Checking empty Stack properties ... OK
+Checking A contents after pushing values 1 and 2 ... OK
+Checking A contents after popping (value 2) ... OK
+Checking A contents after popping last value (1) ... OK
+Checking A after pushing 1..100000 ... OK
+Checking A after popping all values ... OK
+
+*** End of Test_Stacks $RCSfile: test_stacks.adb,v $ $Revision: 2.1 $ ***
+./test_queues
+*** Welcome to Test_Queues $Ver$ ***
+
+Checking empty Queue properties ... OK
+Checking A contents after pushing values 1 and 2 ... OK
+Checking A contents after popping (value 1) ... OK
+Checking A contents after popping last value (2) ... OK
+Checking A after pushing 1..100000 ... OK
+Checking A after popping all values ... OK
+./test_algorithms
+=== Welcome to $RCSfile: test_algorithms.adb,v $ $Revision: 2.1 $ ===
+
+PRECONDITION : The SGL.Vectors package works correctly!
+
+#Pushing values 1..10 into vector A ...
+Testing For_Each (summing A [Sum=55]) ... OK
+Testing Find (4 [found] and 44 [not found]) ... OK
+Testing Find_If (first even number = 2) ... OK
+# Pushing values 1..10 into vector A ={1..10,1..10} ...
+Testing Count (numbers equal to 5 = 2) ... OK
+Testing Count_If (even numbers = 10) ... OK
+# Pushing values 3..6 into vector B = {3..6} ... 
+Testing Search (if B is a subsequence in A = true) ... OK
+# Pushing values 8 into vector B = {3..6,8} ... 
+Testing Search (if B is a subsequence in A = false) ... OK
+# Assigning C and D := A = {1..10, 1..10 } ... OK
+Testing Copy B to Start(C); C = { 3..6, 8, 6..10, 1..10 } [Sum=121] ... OK
+# Backing up A1 := A, and C1 := C
+Swap_Ranges(Start(A), Start(A)+3, Start(C) ... OK
+Undoing previous operation by re-applying Swap_Ranges ... OK
+Testing Unary_Transform (Square_Transform A1->A1 [Sum=770]) ... OK
+Testing Binary_Transform (Square_Transform A+A1->A1 [Sum=880]) ... OK
+# Backing up A1 := A
+Testing Replace(A, 1, -1) ... OK
+Undoing previous operation by reversing Replace ... OK
+Testing Replace_If_Even(A, 0) [Sum=50] ... OK
+# Restoring A := A1 = {1..10, 1..10}
+Testing Replace_Copy(A1->A, 1, -1) ... OK
+Testing Replace_Copy_If_Even(A, 0) [Sum=50] ... OK
+# Restoring A := A1 = {1..10, 1..10}
+Testing Bidirectional_Reverse(L) [Sum=55] ... OK
+Testing Random_Access_Reverse(A) [Sum=110] ... OK
+=== End of $RCSfile: test_algorithms.adb,v $ $Revision: 2.1 $ ===
+
+./test_container_signatures
+./test_functions
+*** Welcome to Test_Functions $RCSfile: test_functions.adb,v $ $Revision: 2.1 $ ***
+
+Checking Greater_Than_7 ...OK
+Checking Not_Greater_Than_7 ...OK
+Checking Less_Than_11 ...OK
+Checking Between_7_And_11 ...OK
+Checking Divides_60 ... OK
+Checking Sum_Of_Square_and_Cube ...OK
+Checking Access_To_Unary_Function Less_Than_11 ...OK
+Checking Access_To_Unary_Function Greater_Than_7 ...OK
+Checking Not1 Access_To_Unary_Function Less_Than_11 ...OK
+Checking Access_To_Unary_Function Between_7_And_11 ...OK
+Checking Access_To_Unary_Function Less_Than_11 ...OK
+Checking Access_To_Binary_Function Less_Equal ...OK
+Checking Remainder_Dividing_60_Is_0(0) ... 
+Constraint_Error raised, as expected
+*** End of Test_Functions $RCSfile: test_functions.adb,v $ $Revision: 2.1 $ ***
+
+./test_iterators
+*** Welcome to Test_Iterators $RCSfile: test_iterators.adb,v $ $Revision: 2.1 $ ***
+
+Checking empty list properties ... OK
+Checking Size(A) = 4 and Size(B) = 12 ... OK
+
+*** End of Test_Iterators $RCSfile: test_iterators.adb,v $ $Revision: 2.1 $ ***
+
